@@ -1,0 +1,30 @@
+{% extends 'layout.twig' %}
+
+{% block body %}
+    <div class="container">
+        <h3><a href="/product/new">Create Product</a></h3>
+        <h1>Product List</h1>
+        {% if products is not empty %}
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Employee Name</th>
+                        <th>Position</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for product in products %}
+                    <tr>
+                        <td><a href="/product/show/{{ product._id }}">{{ product._id }}</a></td>
+                        <td><a href="/product/show/{{ product._id }}">{{ product.name }}</a></td>
+                        <td>{{ product.price }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% else %}
+            <div>No products found.</div>
+        {% endif %}
+    </div>
+{% endblock %}
