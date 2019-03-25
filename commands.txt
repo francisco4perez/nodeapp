@@ -1,0 +1,36 @@
+Get NVM & Install Node.js ----------------------------
+
+$ wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash
+$ source ~/.profile
+$ nvm ls-remote
+$ nvm install [version]
+
+Install MongoDB --------------------------------------
+
+Check:
+https://www.howtoforge.com/tutorial/install-mongodb-on-ubuntu/
+
+sudo systemctl start mongod
+sudo systemctl enable mongod
+
+$ sudo service mongodb stop
+$ sudo service mongodb start
+$ sudo service mongodb status
+
+Mongo Shell: $ mongo
+>  db.createUser({user:"admin", pwd:"admin123", roles:[{role:"root", db:"admin"}]})
+>  use mydb
+>  db.product.insert({"name":"box"})
+
+more: https://www.howtoforge.com/tutorial/install-mongodb-on-ubuntu/
+
+Init Project ------------------------------------------
+
+$ npm install express-generator -g
+$ express --view=twig project                   (genera esqueleto del proyecto con .twig [o .pug, .ejs ..]
+
+npm install mongoose                            (instalacion conexion app.js con mongodb)
+npm install http-errors                         (instalacion de errores http)
+npm install
+
+DEBUG=project:* npm start						(Correr el proyecto)
